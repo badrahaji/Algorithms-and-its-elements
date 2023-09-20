@@ -1,0 +1,32 @@
+ALGORITHM phraselongeur
+VAR
+// mes variable 
+    compt,voy,let,esp,mot : INTEGER;
+    phrase:STRING;
+BEGIN
+// initialisation de variable 
+phrase :=" badreddine bguir .";
+compt :=0;
+let:=0;
+esp:=0;
+mot:=0;
+// we can use read(phrase) without initializing phrase
+
+WHILE (phrase(compt)<> ".") DO
+
+SWITCH (compt) DO
+    phrase(compt) = "e" or "o" or "a" or "y" or "i": voy:=voy+1 break;
+    phrase(compt) = "_" mot:=mot++ ; esp:=esp++ ; break;
+    default : break;
+END_SWITCH
+// compt is my count variable
+compt:=compt+1;
+
+END_WHILE
+
+    let:=compt-esp;
+    write(voy);
+    write(mot);
+    write(let);
+
+END
